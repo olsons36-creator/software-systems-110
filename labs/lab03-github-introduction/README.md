@@ -60,14 +60,14 @@ Complete all of the following in your notes section.
 
 ## Checklist
 
-- [ ] Create at least three headers (Level 1, Level 2, Level 3)
-- [ ] Include one horizontal rule
-- [ ] Use bold text
-- [ ] Use italic text
-- [ ] Create a bullet list containing at least three items
-- [ ] Create a numbered list containing at least three items
-- [ ] Create a task list containing at least three tasks
-- [ ] Add a hyperlink with your GitHub profile
+- [x] Create at least three headers (Level 1, Level 2, Level 3)
+- [x] Include one horizontal rule
+- [x] Use bold text
+- [x] Use italic text
+- [x] Create a bullet list containing at least three items
+- [x] Create a numbered list containing at least three items
+- [x] Create a task list containing at least three tasks
+- [x] Add a hyperlink with your GitHub profile
 
 ## Instructions
 
@@ -84,5 +84,37 @@ Complete all of the following in your notes section.
 
 # Section 3: Student Notes
 
-Delete this line and write your notes here.
+# GitHub Notes
 
+## GitHub Profile Link
+
+[Profile](https://github.com/olsons36-creator)
+
+---
+
+## GitHub Stuff
+
+### Fork
+
+- Allows you to copy the repository and make it your own *without affecting the original*
+- If changes are made to the original, there will be a sync button that will update your fork of the repository
+
+### Cloning
+
+- Copying the reposiory to your computer
+- In the terminal (Ctrl + ` or ~): 
+**git branch [link of project]**
+- Easy to get the link from the green Code button in GitHub
+
+### Commands
+
+1. git add . (or -- all): staging (selects which changes you want to save)
+2. git commit -m "desc message here": saves a snapshot of your staged changes, each commit message should accurately describe the content
+3. git push origin "branch_name": sends your local commits to GitHub (could create a new branch or add to an existing branch)
+4. git pull origin "branch_name": downloads the latest changes from github
+
+## Task List
+
+[x] Work on Software Systems assignments
+[ ] Work on Accouning assignments
+[ ] Get a new student ID card from office
