@@ -115,6 +115,6 @@ Complete all of the following in your notes section.
 
 ## Task List
 
-[x] Work on Software Systems assignments
-[ ] Work on Accouning assignments
-[ ] Get a new student ID card from office
+- [x] Work on Software Systems assignments
+- [ ] Work on Accouning assignments
+- [ ] Get a new student ID card from office
