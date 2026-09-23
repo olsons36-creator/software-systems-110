@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Introduction Lab</title>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         SECTION 1: HTML SYNTAX DEMONSTRATION
+         ========================================================= -->
+
+    <div>
+        <h1>Section 1: HTML Syntax Demonstration</h1>
+
+        <p>
+            HTML (HyperText Markup Language) is used to structure the
+            content of a webpage. HTML uses elements, tags, and attributes
+            to tell the browser what each piece of content is.
+        </p>
+
+        <h2>Basic HTML Document</h2>
+
+        <p>
+            Every HTML page needs a basic document structure:
+        </p>
+
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    Your webpage content goes here.
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <p>
+            The <code>&lt;html&gt;</code> element contains the entire webpage.
+            The <code>&lt;head&gt;</code> contains information about the page,
+            while the <code>&lt;body&gt;</code> contains the content displayed
+            on the webpage.
+        </p>
+
+
+        <h2>HTML Elements</h2>
+
+        <p>
+            Most HTML elements have an opening tag and a closing tag.
+            The content goes between the two tags.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>
+        </p>
+
+        <p>
+            Some elements do not need a closing tag. For example:
+            <code>&lt;br&gt;</code>
+        </p>
+
+
+        <h2>Headings: &lt;h1&gt;–&lt;h6&gt;</h2>
+
+        <p>
+            Headings organize the content of a webpage.
+            <code>&lt;h1&gt;</code> is the most important heading,
+            while <code>&lt;h6&gt;</code> is the least important.
+        </p>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+
+        <h2>Paragraphs: &lt;p&gt;</h2>
+
+        <p>
+            Paragraph elements are used for normal blocks of text.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>
+        </p>
+
+
+        <h2>Line Breaks: &lt;br&gt;</h2>
+
+        <p>
+            The <code>&lt;br&gt;</code> element creates a line break
+            without starting a new paragraph.
+        </p>
+
+        <p>
+            Example:
+            <code>Hello&lt;br&gt;World</code>
+        </p>
+
+        <p>
+            Hello<br>
+            World
+        </p>
+
+
+        <h2>Links: &lt;a&gt;</h2>
+
+        <p>
+            The <code>&lt;a&gt;</code> element creates a link.
+            The <code>href</code> attribute tells the browser where
+            the link should go.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code>
+        </p>
+
+        <p>
+            <a href="https://www.example.com">Visit Example</a>
+        </p>
+
+
+        <h2>Images: &lt;img&gt;</h2>
+
+        <p>
+            The <code>&lt;img&gt;</code> element displays an image.
+            The <code>src</code> attribute tells the browser where the
+            image is located, and the <code>alt</code> attribute provides
+            a text description of the image.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;img src="image.jpg" alt="Description of image"&gt;</code>
+        </p>
+
+        <img src="./assets/image.jpg" alt="HTML Webpage" width="300" height="200">
+
+
+        <h2>Containers: &lt;div&gt;</h2>
+
+        <p>
+            A <code>&lt;div&gt;</code> is used to group related content
+            together. Divs are commonly used to organize sections of a webpage.
+        </p>
+
+        <p>
+            Example:
+        </p>
+
+        <pre>
+&lt;div&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;This content is grouped together.&lt;/p&gt;
+&lt;/div&gt;
+        </pre>
+
+
+        <h2>Text Input</h2>
+
+        <p>
+            An input element can allow a user to enter text.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;input type="text"&gt;</code>
+        </p>
+
+        <p>
+            <input type="text" placeholder="Type something here">
+        </p>
+
+
+        <h2>Checkbox Input</h2>
+
+        <p>
+            A checkbox allows a user to select or unselect an option.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;input type="checkbox"&gt;</code>
+        </p>
+
+        <p>
+            <input type="checkbox"> Example checkbox
+        </p>
+
+
+        <h2>Buttons: &lt;button&gt;</h2>
+
+        <p>
+            The <code>&lt;button&gt;</code> element creates a clickable
+            button. A button does not need to do anything yet. Later,
+            JavaScript can be used to make a button perform an action.
+        </p>
+
+        <p>
+            Example:
+            <code>&lt;button&gt;Click Me&lt;/button&gt;</code>
+        </p>
+
+        <p>
+            <button>Click Me</button>
+        </p>
+
+    </div>
+
+
+    <!-- =========================================================
+         SECTION 2: STUDENT REQUIREMENTS
+         ========================================================= -->
+
+    <div>
+
+        <h1>Section 2: Student Requirements</h1>
+
+        <p>
+            <strong>Lab Value: 20 points</strong>
+        </p>
+
+        <p>
+            Complete all of the following in your
+            <strong>Student Demonstration</strong> section.
+        </p>
+
+
+        <h2>Checklist</h2>
+
+        <ul>
+
+            <li>
+                <input type="checkbox">
+                Identify and explain the purpose of
+                <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>,
+                and <code>&lt;body&gt;</code> in your notes.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate at least one heading using
+                <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a paragraph using <code>&lt;p&gt;</code>.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a line break using <code>&lt;br&gt;</code>.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a link using <code>&lt;a&gt;</code> and
+                an <code>href</code> attribute.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate an image using <code>&lt;img&gt;</code>,
+                including <code>src</code> and <code>alt</code>.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a <code>&lt;div&gt;</code> used to group
+                HTML content.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a text input using
+                <code>&lt;input type="text"&gt;</code>.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a checkbox using
+                <code>&lt;input type="checkbox"&gt;</code>.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Demonstrate a button using <code>&lt;button&gt;</code>.
+                The button does not need to perform an action.
+            </li>
+
+            <li>
+                <input type="checkbox">
+                Add notes explaining what you learned about HTML and
+                use HTML syntax to format your notes.
+            </li>
+
+        </ul>
+
+
+        <h2>Instructions</h2>
+
+        <ol>
+
+            <li>
+                Take notes from the <strong>HTML Introduction</strong>
+                slides and incorporate what you learned into this assignment.
+            </li>
+
+            <li>
+                Your <strong>Student Demonstration</strong> section must
+                demonstrate every HTML feature listed in the checklist.
+            </li>
+
+            <li>
+                Push your completed changes to GitHub.
+            </li>
+
+            <li>
+                Find this <code>index.html</code> file in your GitHub
+                repository and copy the URL of the file.
+            </li>
+
+            <li>
+                Submit <strong>only the URL</strong> in Blackboard.
+                You may submit it as plain text or as a Blackboard hyperlink.
+            </li>
+
+            <li>
+                <strong>Double-check that your link works before submitting.</strong>
+            </li>
+
+        </ol>
+
+
+        <h2>Important</h2>
+
+        <p>
+            Your submitted URL must point to the correct
+            <code>index.html</code> file in your GitHub repository.
+            If your link does not work, points to the wrong file, or is
+            missing, your work may not be gradable and you may receive
+            a score of 0 for the lab.
+        </p>
+
+    </div>
+
+
+    <!-- =========================================================
+         SECTION 3: STUDENT DEMONSTRATION
+         ========================================================= -->
+
+    <div>
+
+        <h1>Section 3: Student Demonstration</h1>
+
+        <p>
+            Delete this line and write your notes here using HTML syntax to format them.
+        </p>
+
+    </div>
+
+</body>
+</html>
