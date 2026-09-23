@@ -113,8 +113,16 @@ Complete all of the following in your notes section.
 3. git push origin "branch_name": sends your local commits to GitHub (could create a new branch or add to an existing branch)
 4. git pull origin "branch_name": downloads the latest changes from github
 
-## Task List
+# Task List
 
 - [x] Work on Software Systems assignments
 - [ ] Work on Accouning assignments
 - [ ] Get a new student ID card from office
+
+# Important Keyboard Shortcuts
+
+- Comments: Ctrl + / (also called wack)
+- Moving between tabs: Ctrl + Page Up or Page Down
+- Move to the last recently used tab: Ctrl + Tab
+- Opening/Closing terminal: Ctrl + ~
+- Opening html in browser: Ctrl + D (extension needed)
