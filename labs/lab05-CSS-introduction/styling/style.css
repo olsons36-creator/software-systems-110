@@ -1,20 +1,20 @@
 /* ELEMENT SELECTOR: Styles every element of this type. */
 h2 {
-    color: black;
-    font-family: "Times New Roman", serif;
-    font-size: 18px;
+    color: darkblue;
+    font-family: "Arial", serif;
+    font-size: 24px;
 }
 
 /* CLASS SELECTOR: Styles elements with class="info-box". */
 .info-box {
-    background-color: white;
-    padding: 5px;
-    border: none;
-    width: 300px;
+    background-color: lightblue;
+    padding: 20px;
+    border: 2px solid black;
+    width: 400px;
 }
 
 /* ID SELECTOR: Styles the element with id="cssLogo". */
 #cssLogo {
-    margin: 5px;
-    height: 75px;
+    margin: 20px;
+    height: 100px;
 }
