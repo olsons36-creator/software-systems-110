@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript City Broadcast Terminal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="page-body">
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="site-header">
+    <div class="header-left">
+      <span class="header-tag">[SYS::ONLINE]</span>
+      <h1 class="site-title">JavaScript City Broadcast Terminal</h1>
+    </div>
+    <div class="header-right">
+      <!-- Day/Night Toggle Button -->
+      <button id="toggle-btn" onclick="toggleDayNight()">☀ Day Mode</button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- Message Input Section -->
+    <section class="input-section">
+      <label for="message-input" class="input-label">
+        &gt; BROADCAST MESSAGE:
+      </label>
+      <input
+        type="text"
+        id="message-input"
+        class="message-input"
+        value="Hello World!"
+        placeholder="Type your message here..."
+      />
+    </section>
+
+    <!-- Terminal Window -->
+    <section class="terminal-wrapper">
+      <div class="terminal-titlebar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-label">js-city :: broadcast-terminal v1.0</span>
+      </div>
+
+      <div class="terminal-body">
+
+        <!-- Terminal Prompt Area -->
+        <div class="terminal-prompt-area">
+          <p class="terminal-question">How many times do you wish to broadcast?</p>
+          <div class="terminal-input-row">
+            <label for="count-input" class="prompt-label">js-city/user/broadcast&gt;</label>
+            <input
+              type="number"
+              id="count-input"
+              class="count-input"
+              min="1"
+              max="50"
+              value="3"
+            />
+          </div>
+          <button id="broadcast-btn" onclick="runBroadcast()"> Broadcast</button>
+        </div>
+
+        <!-- Terminal Output -->
+        <div class="terminal-divider"></div>
+        <div id="terminal-output" class="terminal-output">
+          <p class="output-idle">[Awaiting broadcast signal...]</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Beginner Concept Labels -->
+    <section class="concept-legend">
+      <h2 class="legend-title">&gt; JS Concepts Used in This Lab:</h2>
+      <ul class="legend-list">
+        <li><span class="tag tag-string">STRING</span> — The broadcast message (text)</li>
+        <li><span class="tag tag-number">NUMBER</span> — How many times to broadcast</li>
+        <li><span class="tag tag-boolean">BOOLEAN</span> — Is it day mode? (true/false)</li>
+        <li><span class="tag tag-if">IF STATEMENT</span> — Switches day vs. night look</li>
+        <li><span class="tag tag-loop">FOR LOOP</span> — Prints the message multiple times</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>JS City Broadcast Terminal &mdash; Beginner JavaScript Lab</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

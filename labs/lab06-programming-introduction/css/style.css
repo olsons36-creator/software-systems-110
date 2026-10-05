@@ -1,0 +1,267 @@
+/* ===== Fonts ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* ===== Page ===== */
+
+body {
+    background: linear-gradient(
+        to bottom,
+        #090014 0%,
+        #1b0033 50%,
+        #12001f 100%
+    );
+
+    color: #ffffff;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 40px;
+}
+
+/* ===== Layout ===== */
+
+.page-layout {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* ===== Sidebar ===== */
+
+.sidebar {
+    flex: 1;
+    max-width: 280px;
+
+    padding: 25px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border: 2px solid #66e6ff;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px #66e6ff,
+        0 0 30px rgba(102, 230, 255, 0.25);
+}
+
+/* ===== Rules ===== */
+
+.rules {
+    font-family: Consolas, "Courier New", monospace;
+
+    color: #e8e8e8;
+
+    line-height: 1.8;
+}
+
+/* ===== Main Content ===== */
+
+.container {
+    flex: 3;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border: 2px solid #ff66cc;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px #ff66cc,
+        0 0 30px rgba(255, 102, 204, 0.35);
+}
+
+/* ===== Headings ===== */
+
+h1,
+h2,
+h3 {
+    font-family: "Orbitron", sans-serif;
+}
+
+h1 {
+    color: #ff66cc;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 4px rgba(255, 102, 204, 0.25);
+}
+
+h2 {
+    color: #66e6ff;
+
+    margin-top: 30px;
+
+    text-shadow: 0 0 4px rgba(102, 230, 255, 0.2);
+}
+
+h3 {
+    color: #ffb347;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* ===== Text ===== */
+
+p {
+    color: #f0f0f0;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+strong {
+    color: #ffb347;
+}
+
+/* ===== Variable Cards ===== */
+
+.variable-container {
+    display: flex;
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.variable-card {
+    flex: 1;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    border: 2px solid #ff66cc;
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 10px rgba(255, 102, 204, 0.25);
+}
+
+/* ===== Labels ===== */
+
+label {
+    color: #f5f5f5;
+
+    font-weight: 600;
+}
+
+/* ===== Dropdowns ===== */
+
+select {
+    width: 220px;
+
+    padding: 10px;
+    margin-top: 10px;
+
+    background-color: #1a102b;
+
+    color: white;
+
+    border: 2px solid #ff66cc;
+    border-radius: 6px;
+
+    font-size: 1rem;
+    font-family: inherit;
+
+    box-shadow:
+        0 0 8px rgba(255, 102, 204, 0.5);
+
+    outline: none;
+}
+
+select:focus {
+    box-shadow:
+        0 0 12px #ff66cc,
+        0 0 20px rgba(255, 102, 204, 0.5);
+}
+
+/* ===== Button ===== */
+
+button {
+    display: block;
+
+    margin: 0 auto 30px auto;
+
+    background: linear-gradient(
+        to right,
+        #ff0088,
+        #ff7a18
+    );
+
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 12px 24px;
+
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 136, 0.6);
+
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 136, 0.8),
+        0 0 30px rgba(255, 0, 136, 0.4);
+}
+
+/* ===== Output ===== */
+
+#output {
+    margin-top: 15px;
+
+    min-height: 100px;
+
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    border: 2px solid #66e6ff;
+    border-radius: 6px;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    box-shadow:
+        0 0 12px rgba(102, 230, 255, 0.6),
+        0 0 25px rgba(102, 230, 255, 0.25);
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 900px) {
+
+    .page-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        max-width: 100%;
+    }
+
+    .variable-container {
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+    }
+
+}

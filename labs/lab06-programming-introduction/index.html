@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Making Program</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div class="page-layout">
+
+        <aside class="sidebar">
+
+            <h2>Program Rules</h2>
+
+            <div class="rules">
+
+                If doISayHello is true<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Say "Hello, World!"<br><br>
+
+                Otherwise, if doISayGoodbye is true<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Say "Goodbye, World!"<br><br>
+
+                Otherwise<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Say "Why am I even out here? It's cold."<br><br>
+
+                Always<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Say something so the world knows you are going inside now.
+
+            </div>
+
+        </aside>
+
+        <div class="container">
+
+            <h1>Decision Making Program</h1>
+
+            <p>
+                Change the boolean variables below and then run the program.
+                The values of these variables determine what message is displayed.
+            </p>
+
+            <h2>Program Variables</h2>
+
+            <p>
+                I walk outside of my home. It's a beautiful fall day in La Crosse, Wisconsin.
+                <br>
+                The sun is shining. The air smells like apples and crisp autumn leaves.
+            </p>
+
+            <div class="variable-container">
+
+                <div class="variable-card">
+
+                    <h3>Hello Option</h3>
+
+                    <p>
+                        Should I say "Hello, World!"?
+                    </p>
+
+                    <label for="helloInput">
+                        Set <strong>doISayHello</strong> to:&nbsp;
+                    </label>
+
+                    <select id="helloInput">
+                        <option value="true">true</option>
+                        <option value="false" selected>false</option>
+                    </select>
+
+                </div>
+
+                <div class="variable-card">
+
+                    <h3>Goodbye Option</h3>
+
+                    <p>
+                        Should I say "Goodbye, World!"?
+                    </p>
+
+                    <label for="goodbyeInput">
+                        Set <strong>doISayGoodbye</strong> to:&nbsp;
+                    </label>
+
+                    <select id="goodbyeInput">
+                        <option value="true">true</option>
+                        <option value="false" selected>false</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button onclick="runProgram()">Run Program</button>
+
+            <h2>Program Output</h2>
+
+            <div id="output">
+                The program output will appear here.
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let doISayHello = false;
+        let doISayGoodbye = false;
+
+        function updateVariables() {
+
+            doISayHello =
+                document.getElementById("helloInput").value == "true";
+
+            doISayGoodbye =
+                document.getElementById("goodbyeInput").value == "true";
+
+        }
+
+        function displayMessages(message, finalMessage) {
+
+            document.getElementById("output").innerHTML =
+                message + "<br>" + "..." + "<br>" + "..." + "<br>" + finalMessage;
+
+        }
+
+        function sayHello() {
+
+            let message;
+            let finalMessage;
+
+            if(doISayHello == true) {
+
+                // Assign a greeting message.
+                message = "Hello, World!";
+
+            } else if(doISayGoodbye == true) {
+
+                // Assign a goodbye message.
+                message = "Goodbye, World!";
+
+            } else {
+
+                // Assign a default message.
+                message = "Why am I even out here? It's cold.";
+
+            }
+
+            // Assign a message that always displays.
+            finalMessage = "I am tired of being outside. I am going inside now.";
+
+            displayMessages(message, finalMessage);
+
+        }
+
+        function runProgram() {
+
+            updateVariables();
+            sayHello();
+
+        }
+
+    </script>
+
+</body>
+</html>
