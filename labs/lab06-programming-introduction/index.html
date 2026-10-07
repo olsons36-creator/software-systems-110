@@ -192,26 +192,19 @@
 
             let message;
             let finalMessage;
-            let x = 0;
+            let worldMessage;
 
-            if((doISayHello == true) & (doISayGoodbye == true)) {
-
-                message = "Hello Goodbye, World!";
-                x = 1;
-
-            }if(doISayHello == true) {
+            if(doISayHello == true) {
 
                 // Assign a greeting message.
                 message = "Hello, World!";
-                console.log("Hi");
-                x = 0;
+                worldMessage = "Hi";
 
             } else if(doISayGoodbye == true) {
 
                 // Assign a goodbye message.
                 message = "Goodbye, World!";
-                console.log("Bye");
-                x = 0;
+                worldMessage = "Bye";
 
             } else {
 
@@ -220,13 +213,18 @@
                 console.log("(sorry for the unsolicited advice)");
 
             }
+            
+            if ((doISayHello == true) & (doISayGoodbye == true)) {
 
-            if (x != 0) {
-                console.log("What");
+                message = "Hello Goodbye, World!";
+                worldMessage = "What";
+
             }
 
             // Assign a message that always displays.
             finalMessage = "Check the console log";
+
+            console.log(worldMessage);
 
             displayMessages(message, finalMessage);
 
