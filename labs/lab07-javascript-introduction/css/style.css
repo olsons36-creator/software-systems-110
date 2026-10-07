@@ -1,0 +1,545 @@
+/* ============================================================
+   CSS: JavaScript City Broadcast Terminal
+   Synthwave / Cyberpunk Aesthetic (High Contrast & Legible)
+   ============================================================ */
+
+/* ----- Google Font Import ----- */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@600;800;900&display=swap');
+
+/* ----- CSS Variables: Night Mode (Cooler Tones - Default) ----- */
+:root {
+  /* Backgrounds & Canvas */
+  --bg-gradient:       linear-gradient(180deg, #070913 0%, #0d1224 50%, #111a36 100%);
+  --bg-grid-color:     rgba(0, 229, 255, 0.07);
+
+  /* Containers & Terminal */
+  --surface-color:     #0c1020;
+  --terminal-bg:       #060811;
+  --terminal-border:   #00d4ff;
+  --terminal-shadow:   0 12px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(0, 212, 255, 0.15);
+
+  /* Typography & Contrast */
+  --text-main:         #f0f6fc;
+  --text-muted:        #8b9bb4;
+  --title-color:       #00f0ff;
+  --title-sub:         #ff4db8;
+
+  /* Interactive Accents */
+  --accent-cyan:       #00f0ff;
+  --accent-pink:       #ff2a8d;
+  --btn-toggle-bg:     #121d3b;
+  --btn-toggle-border: #00f0ff;
+  --btn-toggle-text:   #00f0ff;
+
+  --btn-action-bg:     #ff2a8d;
+  --btn-action-text:   #ffffff;
+
+  /* Output text */
+  --output-text:       #5af7ff;
+  --output-prefix:     #ff2a8d;
+
+  /* Educational Concept Tags */
+  --tag-string:        #ff2a8d;
+  --tag-number:        #00d4ff;
+  --tag-boolean:       #ffc83b;
+  --tag-if:            #b388ff;
+  --tag-loop:          #00e676;
+
+  /* Window Dots */
+  --dot-red:           #ff5252;
+  --dot-yellow:        #ffd740;
+  --dot-green:         #69f0ae;
+}
+
+/* ----- CSS Variables: Day Mode (Warmer Sunset/Retro Tones) ----- */
+body.day-mode {
+  --bg-gradient:       linear-gradient(180deg, #fff3e6 0%, #ffe0cc 45%, #ffd1b3 100%);
+  --bg-grid-color:     rgba(230, 81, 0, 0.08);
+
+  --surface-color:     #ffffff;
+  --terminal-bg:       #1f1424;
+  --terminal-border:   #ff5e3a;
+  --terminal-shadow:   0 14px 40px rgba(180, 50, 20, 0.18), 0 0 25px rgba(255, 94, 58, 0.25);
+
+  --text-main:         #241526;
+  --text-muted:        #6b536e;
+  --title-color:       #d81e5b;
+  --title-sub:         #e65100;
+
+  --accent-cyan:       #e65100;
+  --accent-pink:       #d81e5b;
+  --btn-toggle-bg:     #ffe8dc;
+  --btn-toggle-border: #e65100;
+  --btn-toggle-text:   #b83800;
+
+  --btn-action-bg:     #e65100;
+  --btn-action-text:   #ffffff;
+
+  --output-text:       #ffd166;
+  --output-prefix:     #ff5e3a;
+
+  --tag-string:        #d81e5b;
+  --tag-number:        #e65100;
+  --tag-boolean:       #c67d00;
+  --tag-if:            #7b1fa2;
+  --tag-loop:          #2e7d32;
+}
+
+/* ============================================================
+   Base Setup & Typography Scaling
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+/* Subtle grid floor overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--bg-grid-color) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--bg-grid-color) 1.5px, transparent 1.5px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   Header Section
+   ============================================================ */
+.site-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 36px;
+  background-color: var(--surface-color);
+  border-bottom: 2px solid var(--terminal-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.header-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--title-sub);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.2rem, 3.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--title-color);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+
+#toggle-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 22px;
+  background-color: var(--btn-toggle-bg);
+  color: var(--btn-toggle-text);
+  border: 2px solid var(--btn-toggle-border);
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   Main Layout Container
+   ============================================================ */
+.main-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 0 24px 48px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ============================================================
+   Broadcast Message Input
+   ============================================================ */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--title-sub);
+  letter-spacing: 0.1em;
+}
+
+.message-input {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 14px 18px;
+  background-color: var(--surface-color);
+  color: var(--text-main);
+  border: 2px solid var(--terminal-border);
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.message-input:focus {
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 12px rgba(255, 42, 141, 0.3);
+}
+
+/* ============================================================
+   Terminal Window
+   ============================================================ */
+.terminal-wrapper {
+  background-color: var(--terminal-bg);
+  border: 2px solid var(--terminal-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--terminal-shadow);
+  transition: all 0.3s ease;
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-bottom: 2px solid var(--terminal-border);
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red    { background-color: var(--dot-red); }
+.dot-yellow { background-color: var(--dot-yellow); }
+.dot-green  { background-color: var(--dot-green); }
+
+.terminal-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a0aec0;
+  margin-left: 6px;
+  letter-spacing: 0.08em;
+}
+
+.terminal-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.terminal-prompt-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminal-question {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.prompt-label {
+  color: var(--accent-cyan);
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.count-input {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 10px 14px;
+  width: 95px;
+  background-color: #04050a;
+  color: #00f0ff;
+  border: 2px solid var(--terminal-border);
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+}
+
+.count-input:focus {
+  border-color: var(--accent-pink);
+}
+
+#broadcast-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 12px 28px;
+  background-color: var(--btn-action-bg);
+  color: var(--btn-action-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  align-self: flex-start;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+#broadcast-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+.terminal-divider {
+  border: none;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  margin: 4px 0;
+}
+
+/* ============================================================
+   Terminal Output Area
+   ============================================================ */
+.terminal-output {
+  min-height: 110px;
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 6px;
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--terminal-border) rgba(0, 0, 0, 0.3);
+}
+
+.output-idle {
+  color: #718096;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Terminal-style output lines — no emoji, left accent bar */
+.output-line {
+  color: var(--output-text);
+  font-family: 'Fira Code', monospace;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.7;
+  word-break: break-word;
+  letter-spacing: 0.03em;
+  border-left: 2px solid var(--accent-pink);
+  padding-left: 12px;
+  margin-left: 4px;
+}
+
+/* Chrome / Edge / Safari terminal scrollbar */
+.terminal-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-pink) 0%,
+    var(--accent-cyan) 100%
+  );
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.terminal-output::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent-cyan) 0%,
+    var(--accent-pink) 100%
+  );
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.terminal-output::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ============================================================
+   Concept Legend Box
+   ============================================================ */
+.concept-legend {
+  border: 2px solid var(--terminal-border);
+  border-radius: 8px;
+  padding: 24px 28px;
+  background-color: var(--surface-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.legend-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--title-color);
+  margin-bottom: 18px;
+  letter-spacing: 0.06em;
+}
+
+.legend-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend-list li {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.tag-string  { background-color: var(--tag-string); }
+.tag-number  { background-color: var(--tag-number);  color: #070913; }
+.tag-boolean { background-color: var(--tag-boolean); color: #070913; }
+.tag-if      { background-color: var(--tag-if); }
+.tag-loop    { background-color: var(--tag-loop);    color: #070913; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   Page-Level Scrollbar
+   ============================================================ */
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--terminal-border) var(--surface-color);
+}
+
+/* Chrome / Edge / Safari */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--surface-color);
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-pink)     0%,
+    var(--terminal-border) 50%,
+    var(--accent-cyan)     100%
+  );
+  border-radius: 6px;
+  border: 2px solid var(--surface-color);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent-cyan) 0%,
+    var(--accent-pink) 100%
+  );
+  box-shadow: 0 0 10px var(--accent-pink);
+}
+
+html::-webkit-scrollbar-corner {
+  background: var(--surface-color);
+}
+
+/* ============================================================
+   Responsive Tweaks
+   ============================================================ */
+@media (max-width: 600px) {
+  .site-header   { padding: 18px 20px; }
+  .main-content  { padding: 0 16px; margin: 24px auto; }
+  .terminal-body { padding: 18px; }
+  .site-title    { font-size: 1.25rem; }
+  .output-line   { font-size: 1rem; }
+}
