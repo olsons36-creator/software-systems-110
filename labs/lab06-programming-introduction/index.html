@@ -35,7 +35,7 @@
 
         <div class="container">
 
-            <h1>Decision Making Program</h1>
+            <h1>Decision Making Program (Sarah)</h1>
 
             <p>
                 Change the boolean variables below and then run the program.
@@ -146,6 +146,10 @@
                 doISayGoodbye = true
              
                 Observation:
+                Hello World
+                ...
+                ...
+                I am tired of being outside. I am going inside now.
             
                 ***********************************************************************
                 
@@ -154,7 +158,11 @@
                 doISayGoodbye = false
              
                 Observation:
-            
+                Why am I even out here? It's cold.
+                ...
+                ...
+                I am tired of being outside. I am going inside now.
+
                 ***********************************************************************
 
                 Test #3
@@ -162,6 +170,10 @@
                 doISayGoodbye = false
              
                 Observation:
+                Hello World!
+                ...
+                ...
+                I am tired of being outside. I am going inside now.
 
                 ***********************************************************************    
 
@@ -170,32 +182,51 @@
                 doISayGoodbye = true
              
                 Observation:
+                Goodbye World!
+                ...
+                ...
+                I am tired of being outside. I am going inside now.
                 
             */
     
 
             let message;
             let finalMessage;
+            let x = 0;
 
-            if(doISayHello == true) {
+            if((doISayHello == true) & (doISayGoodbye == true)) {
+
+                message = "Hello Goodbye, World!";
+                x = 1;
+
+            }if(doISayHello == true) {
 
                 // Assign a greeting message.
                 message = "Hello, World!";
+                console.log("Hi");
+                x = 0;
 
             } else if(doISayGoodbye == true) {
 
                 // Assign a goodbye message.
                 message = "Goodbye, World!";
+                console.log("Bye");
+                x = 0;
 
             } else {
 
                 // Assign a default message.
-                message = "Why am I even out here? It's cold.";
+                message = "If you have low iron, you might want to go to your doctor to see what you can do. My mom had really low iron and she got a few blood infusions to increase her iron. She also takes iron supplements to keep her iron levels normal (they were prescribed by her doctor). She mentioned to me that she has a lot more energy now.";
+                console.log("(sorry for the unsolicited advice)");
 
             }
 
+            if (x != 0) {
+                console.log("What");
+            }
+
             // Assign a message that always displays.
-            finalMessage = "I am tired of being outside. I am going inside now.";
+            finalMessage = "Check the console log";
 
             displayMessages(message, finalMessage);
 
