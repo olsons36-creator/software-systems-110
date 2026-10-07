@@ -18,8 +18,7 @@
  * Your mission:
  * Add the correct keyword so isDayMode becomes a proper variable.
  *****************************************************************/
-isDayMode = false;   // boolean: starts as false (night mode is default)
-
+let bool, isDayMode = false;   // boolean: starts as false (night mode is default)
 
 
 // ---- PART 2: FUNCTION — Toggle Day/Night Mode ----
@@ -37,7 +36,15 @@ function toggleDayNight() {
    * Fix this line so the boolean is flipped every time the button
    * is clicked.
    *****************************************************************/
-  isDayMode = isDayMode;
+  if (isDayMode){
+
+    isDayMode = false;
+
+  } else {
+
+    isDayMode = true;
+
+  }
 
   /*****************************************************************
    * 4. CONNECTION FAILURE:
@@ -47,7 +54,7 @@ function toggleDayNight() {
    * Your mission:
    * Check the HTML file and find the correct id for the page body.
    *****************************************************************/
-  const body = document.getElementById("pageBody");
+  const body = document.getElementById("page-body");
   const toggleBtn = document.getElementById("toggle-btn");
 
   /*****************************************************************
@@ -59,7 +66,7 @@ function toggleDayNight() {
    * Replace the incorrect operator with a strict comparison
    * operator.
    *****************************************************************/
-  if (isDayMode = true) {
+  if (isDayMode) {
 
     // Day mode: add the "day-mode" CSS class to the body
     body.classList.add("day-mode");
@@ -89,7 +96,7 @@ function runBroadcast() {
    * Your mission:
    * Something is missing here. Update this line so the user's message can be read correctly.
    *****************************************************************/
-  const message = document.getElementById("message-input");
+  const message = document.getElementById("message-input").value;
 
   // NUMBER: grab the count from the number input field
   // parseInt() converts the text from the input into a whole number.
@@ -104,7 +111,7 @@ function runBroadcast() {
    * Your mission:
    * Repair the condition so valid numbers are accepted.
    *****************************************************************/
-  if (isNaN(count) || count >= 1) {
+  if (isNaN(count) || count < 1) {
     alert("Please enter a number greater than 0.");
     return;
   }
@@ -123,14 +130,14 @@ function runBroadcast() {
    * Your mission:
    * Repair the loop condition so every broadcast is displayed.
    *****************************************************************/
-  for (let i = 1; i < count; i++) {
+  for (let i = 0; i < count; i++) {
 
     // Create a new paragraph element for each line of output
     const line = document.createElement("p");
     line.classList.add("output-line");
 
     // Set the text: terminal-style response with line number and message
-    line.textContent = "[broadcast::" + i + "]  " + message;
+    line.textContent = "[broadcast::" + (i + 1) + "]  " + message;
 
     // Add the line to the terminal output area
     outputArea.appendChild(line);
